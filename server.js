@@ -4,9 +4,10 @@
 
 const express = require('express');
 const app = express();
+const config = require('./config');
 
-app.get('/hello', (r,s) => s.send("Hello"));
+app.get('/hello', (r, s) => s.send("Hello"));
 
-app.listen(4000, () => {
-  console.log("Listening on port 4000")
+app.listen(config.PORT, () => {
+  console.log("Listening on port " + config.PORT);
 });
